@@ -1,0 +1,510 @@
+2024-06-27 17:40:43,176 - dcgan_base - INFO - Program started
+2024-06-27 17:40:43,181 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:40:43,248 - dcgan_base - INFO - Discriminator created
+2024-06-27 17:40:43,256 - dcgan_base - INFO - Model: "sequential_9"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_9 (Conv2D)           (None, 32, 32, 64)        1792      
+                                                                 
+ leaky_re_lu_18 (LeakyReLU)  (None, 32, 32, 64)        0         
+                                                                 
+ dropout_6 (Dropout)         (None, 32, 32, 64)        0         
+                                                                 
+ conv2d_10 (Conv2D)          (None, 16, 16, 128)       73856     
+                                                                 
+ leaky_re_lu_19 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ dropout_7 (Dropout)         (None, 16, 16, 128)       0         
+                                                                 
+ flatten_3 (Flatten)         (None, 32768)             0         
+                                                                 
+ dense_6 (Dense)             (None, 1)                 32769     
+                                                                 
+=================================================================
+Total params: 108417 (423.50 KB)
+Trainable params: 108417 (423.50 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:40:43,262 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:40:43,370 - dcgan_base - INFO - Generator created
+2024-06-27 17:40:43,376 - dcgan_base - INFO - Model: "sequential_10"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_7 (Dense)             (None, 16384)             1654784   
+                                                                 
+ leaky_re_lu_20 (LeakyReLU)  (None, 16384)             0         
+                                                                 
+ reshape_3 (Reshape)         (None, 8, 8, 256)         0         
+                                                                 
+ conv2d_transpose_9 (Conv2D  (None, 16, 16, 128)       524416    
+ Transpose)                                                      
+                                                                 
+ leaky_re_lu_21 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ conv2d_transpose_10 (Conv2  (None, 32, 32, 128)       262272    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_22 (LeakyReLU)  (None, 32, 32, 128)       0         
+                                                                 
+ conv2d_transpose_11 (Conv2  (None, 64, 64, 64)        131136    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_23 (LeakyReLU)  (None, 64, 64, 64)        0         
+                                                                 
+ conv2d_11 (Conv2D)          (None, 64, 64, 3)         1731      
+                                                                 
+=================================================================
+Total params: 2574339 (9.82 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:40:43,383 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:40:43,473 - dcgan_base - INFO - GAN created
+2024-06-27 17:40:43,479 - dcgan_base - INFO - Model: "sequential_11"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ sequential_10 (Sequential)  (None, 64, 64, 3)         2574339   
+                                                                 
+ sequential_9 (Sequential)   (None, 1)                 108417    
+                                                                 
+=================================================================
+Total params: 2682756 (10.23 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 108417 (423.50 KB)
+_________________________________________________________________
+
+2024-06-27 17:40:43,486 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:40:49,709 - dcgan_base - INFO - Training started
+2024-06-27 17:41:10,434 - dcgan_base - INFO - Program started
+2024-06-27 17:41:10,434 - dcgan_base - INFO - Program started
+2024-06-27 17:41:10,444 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:10,444 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:10,513 - dcgan_base - INFO - Discriminator created
+2024-06-27 17:41:10,513 - dcgan_base - INFO - Discriminator created
+2024-06-27 17:41:10,522 - dcgan_base - INFO - Model: "sequential_12"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_12 (Conv2D)          (None, 32, 32, 64)        1792      
+                                                                 
+ leaky_re_lu_24 (LeakyReLU)  (None, 32, 32, 64)        0         
+                                                                 
+ dropout_8 (Dropout)         (None, 32, 32, 64)        0         
+                                                                 
+ conv2d_13 (Conv2D)          (None, 16, 16, 128)       73856     
+                                                                 
+ leaky_re_lu_25 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ dropout_9 (Dropout)         (None, 16, 16, 128)       0         
+                                                                 
+ flatten_4 (Flatten)         (None, 32768)             0         
+                                                                 
+ dense_8 (Dense)             (None, 1)                 32769     
+                                                                 
+=================================================================
+Total params: 108417 (423.50 KB)
+Trainable params: 108417 (423.50 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:41:10,522 - dcgan_base - INFO - Model: "sequential_12"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_12 (Conv2D)          (None, 32, 32, 64)        1792      
+                                                                 
+ leaky_re_lu_24 (LeakyReLU)  (None, 32, 32, 64)        0         
+                                                                 
+ dropout_8 (Dropout)         (None, 32, 32, 64)        0         
+                                                                 
+ conv2d_13 (Conv2D)          (None, 16, 16, 128)       73856     
+                                                                 
+ leaky_re_lu_25 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ dropout_9 (Dropout)         (None, 16, 16, 128)       0         
+                                                                 
+ flatten_4 (Flatten)         (None, 32768)             0         
+                                                                 
+ dense_8 (Dense)             (None, 1)                 32769     
+                                                                 
+=================================================================
+Total params: 108417 (423.50 KB)
+Trainable params: 108417 (423.50 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:41:10,529 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:10,529 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:10,637 - dcgan_base - INFO - Generator created
+2024-06-27 17:41:10,637 - dcgan_base - INFO - Generator created
+2024-06-27 17:41:10,647 - dcgan_base - INFO - Model: "sequential_13"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_9 (Dense)             (None, 16384)             1654784   
+                                                                 
+ leaky_re_lu_26 (LeakyReLU)  (None, 16384)             0         
+                                                                 
+ reshape_4 (Reshape)         (None, 8, 8, 256)         0         
+                                                                 
+ conv2d_transpose_12 (Conv2  (None, 16, 16, 128)       524416    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_27 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ conv2d_transpose_13 (Conv2  (None, 32, 32, 128)       262272    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_28 (LeakyReLU)  (None, 32, 32, 128)       0         
+                                                                 
+ conv2d_transpose_14 (Conv2  (None, 64, 64, 64)        131136    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_29 (LeakyReLU)  (None, 64, 64, 64)        0         
+                                                                 
+ conv2d_14 (Conv2D)          (None, 64, 64, 3)         1731      
+                                                                 
+=================================================================
+Total params: 2574339 (9.82 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:41:10,647 - dcgan_base - INFO - Model: "sequential_13"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_9 (Dense)             (None, 16384)             1654784   
+                                                                 
+ leaky_re_lu_26 (LeakyReLU)  (None, 16384)             0         
+                                                                 
+ reshape_4 (Reshape)         (None, 8, 8, 256)         0         
+                                                                 
+ conv2d_transpose_12 (Conv2  (None, 16, 16, 128)       524416    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_27 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ conv2d_transpose_13 (Conv2  (None, 32, 32, 128)       262272    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_28 (LeakyReLU)  (None, 32, 32, 128)       0         
+                                                                 
+ conv2d_transpose_14 (Conv2  (None, 64, 64, 64)        131136    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_29 (LeakyReLU)  (None, 64, 64, 64)        0         
+                                                                 
+ conv2d_14 (Conv2D)          (None, 64, 64, 3)         1731      
+                                                                 
+=================================================================
+Total params: 2574339 (9.82 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:41:10,655 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:10,655 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:10,747 - dcgan_base - INFO - GAN created
+2024-06-27 17:41:10,747 - dcgan_base - INFO - GAN created
+2024-06-27 17:41:10,756 - dcgan_base - INFO - Model: "sequential_14"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ sequential_13 (Sequential)  (None, 64, 64, 3)         2574339   
+                                                                 
+ sequential_12 (Sequential)  (None, 1)                 108417    
+                                                                 
+=================================================================
+Total params: 2682756 (10.23 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 108417 (423.50 KB)
+_________________________________________________________________
+
+2024-06-27 17:41:10,756 - dcgan_base - INFO - Model: "sequential_14"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ sequential_13 (Sequential)  (None, 64, 64, 3)         2574339   
+                                                                 
+ sequential_12 (Sequential)  (None, 1)                 108417    
+                                                                 
+=================================================================
+Total params: 2682756 (10.23 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 108417 (423.50 KB)
+_________________________________________________________________
+
+2024-06-27 17:41:10,763 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:10,763 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:16,915 - dcgan_base - INFO - Training started
+2024-06-27 17:41:16,915 - dcgan_base - INFO - Training started
+2024-06-27 17:41:24,036 - dcgan_base - INFO - Program started
+2024-06-27 17:41:24,036 - dcgan_base - INFO - Program started
+2024-06-27 17:41:24,036 - dcgan_base - INFO - Program started
+2024-06-27 17:41:24,047 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,047 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,047 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,121 - dcgan_base - INFO - Discriminator created
+2024-06-27 17:41:24,121 - dcgan_base - INFO - Discriminator created
+2024-06-27 17:41:24,121 - dcgan_base - INFO - Discriminator created
+2024-06-27 17:41:24,132 - dcgan_base - INFO - Model: "sequential_15"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_15 (Conv2D)          (None, 32, 32, 64)        1792      
+                                                                 
+ leaky_re_lu_30 (LeakyReLU)  (None, 32, 32, 64)        0         
+                                                                 
+ dropout_10 (Dropout)        (None, 32, 32, 64)        0         
+                                                                 
+ conv2d_16 (Conv2D)          (None, 16, 16, 128)       73856     
+                                                                 
+ leaky_re_lu_31 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ dropout_11 (Dropout)        (None, 16, 16, 128)       0         
+                                                                 
+ flatten_5 (Flatten)         (None, 32768)             0         
+                                                                 
+ dense_10 (Dense)            (None, 1)                 32769     
+                                                                 
+=================================================================
+Total params: 108417 (423.50 KB)
+Trainable params: 108417 (423.50 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:41:24,132 - dcgan_base - INFO - Model: "sequential_15"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_15 (Conv2D)          (None, 32, 32, 64)        1792      
+                                                                 
+ leaky_re_lu_30 (LeakyReLU)  (None, 32, 32, 64)        0         
+                                                                 
+ dropout_10 (Dropout)        (None, 32, 32, 64)        0         
+                                                                 
+ conv2d_16 (Conv2D)          (None, 16, 16, 128)       73856     
+                                                                 
+ leaky_re_lu_31 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ dropout_11 (Dropout)        (None, 16, 16, 128)       0         
+                                                                 
+ flatten_5 (Flatten)         (None, 32768)             0         
+                                                                 
+ dense_10 (Dense)            (None, 1)                 32769     
+                                                                 
+=================================================================
+Total params: 108417 (423.50 KB)
+Trainable params: 108417 (423.50 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:41:24,132 - dcgan_base - INFO - Model: "sequential_15"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d_15 (Conv2D)          (None, 32, 32, 64)        1792      
+                                                                 
+ leaky_re_lu_30 (LeakyReLU)  (None, 32, 32, 64)        0         
+                                                                 
+ dropout_10 (Dropout)        (None, 32, 32, 64)        0         
+                                                                 
+ conv2d_16 (Conv2D)          (None, 16, 16, 128)       73856     
+                                                                 
+ leaky_re_lu_31 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ dropout_11 (Dropout)        (None, 16, 16, 128)       0         
+                                                                 
+ flatten_5 (Flatten)         (None, 32768)             0         
+                                                                 
+ dense_10 (Dense)            (None, 1)                 32769     
+                                                                 
+=================================================================
+Total params: 108417 (423.50 KB)
+Trainable params: 108417 (423.50 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:41:24,142 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,142 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,142 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,256 - dcgan_base - INFO - Generator created
+2024-06-27 17:41:24,256 - dcgan_base - INFO - Generator created
+2024-06-27 17:41:24,256 - dcgan_base - INFO - Generator created
+2024-06-27 17:41:24,268 - dcgan_base - INFO - Model: "sequential_16"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_11 (Dense)            (None, 16384)             1654784   
+                                                                 
+ leaky_re_lu_32 (LeakyReLU)  (None, 16384)             0         
+                                                                 
+ reshape_5 (Reshape)         (None, 8, 8, 256)         0         
+                                                                 
+ conv2d_transpose_15 (Conv2  (None, 16, 16, 128)       524416    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_33 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ conv2d_transpose_16 (Conv2  (None, 32, 32, 128)       262272    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_34 (LeakyReLU)  (None, 32, 32, 128)       0         
+                                                                 
+ conv2d_transpose_17 (Conv2  (None, 64, 64, 64)        131136    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_35 (LeakyReLU)  (None, 64, 64, 64)        0         
+                                                                 
+ conv2d_17 (Conv2D)          (None, 64, 64, 3)         1731      
+                                                                 
+=================================================================
+Total params: 2574339 (9.82 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:41:24,268 - dcgan_base - INFO - Model: "sequential_16"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_11 (Dense)            (None, 16384)             1654784   
+                                                                 
+ leaky_re_lu_32 (LeakyReLU)  (None, 16384)             0         
+                                                                 
+ reshape_5 (Reshape)         (None, 8, 8, 256)         0         
+                                                                 
+ conv2d_transpose_15 (Conv2  (None, 16, 16, 128)       524416    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_33 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ conv2d_transpose_16 (Conv2  (None, 32, 32, 128)       262272    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_34 (LeakyReLU)  (None, 32, 32, 128)       0         
+                                                                 
+ conv2d_transpose_17 (Conv2  (None, 64, 64, 64)        131136    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_35 (LeakyReLU)  (None, 64, 64, 64)        0         
+                                                                 
+ conv2d_17 (Conv2D)          (None, 64, 64, 3)         1731      
+                                                                 
+=================================================================
+Total params: 2574339 (9.82 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:41:24,268 - dcgan_base - INFO - Model: "sequential_16"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_11 (Dense)            (None, 16384)             1654784   
+                                                                 
+ leaky_re_lu_32 (LeakyReLU)  (None, 16384)             0         
+                                                                 
+ reshape_5 (Reshape)         (None, 8, 8, 256)         0         
+                                                                 
+ conv2d_transpose_15 (Conv2  (None, 16, 16, 128)       524416    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_33 (LeakyReLU)  (None, 16, 16, 128)       0         
+                                                                 
+ conv2d_transpose_16 (Conv2  (None, 32, 32, 128)       262272    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_34 (LeakyReLU)  (None, 32, 32, 128)       0         
+                                                                 
+ conv2d_transpose_17 (Conv2  (None, 64, 64, 64)        131136    
+ DTranspose)                                                     
+                                                                 
+ leaky_re_lu_35 (LeakyReLU)  (None, 64, 64, 64)        0         
+                                                                 
+ conv2d_17 (Conv2D)          (None, 64, 64, 3)         1731      
+                                                                 
+=================================================================
+Total params: 2574339 (9.82 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 17:41:24,279 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,279 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,279 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,388 - dcgan_base - INFO - GAN created
+2024-06-27 17:41:24,388 - dcgan_base - INFO - GAN created
+2024-06-27 17:41:24,388 - dcgan_base - INFO - GAN created
+2024-06-27 17:41:24,398 - dcgan_base - INFO - Model: "sequential_17"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ sequential_16 (Sequential)  (None, 64, 64, 3)         2574339   
+                                                                 
+ sequential_15 (Sequential)  (None, 1)                 108417    
+                                                                 
+=================================================================
+Total params: 2682756 (10.23 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 108417 (423.50 KB)
+_________________________________________________________________
+
+2024-06-27 17:41:24,398 - dcgan_base - INFO - Model: "sequential_17"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ sequential_16 (Sequential)  (None, 64, 64, 3)         2574339   
+                                                                 
+ sequential_15 (Sequential)  (None, 1)                 108417    
+                                                                 
+=================================================================
+Total params: 2682756 (10.23 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 108417 (423.50 KB)
+_________________________________________________________________
+
+2024-06-27 17:41:24,398 - dcgan_base - INFO - Model: "sequential_17"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ sequential_16 (Sequential)  (None, 64, 64, 3)         2574339   
+                                                                 
+ sequential_15 (Sequential)  (None, 1)                 108417    
+                                                                 
+=================================================================
+Total params: 2682756 (10.23 MB)
+Trainable params: 2574339 (9.82 MB)
+Non-trainable params: 108417 (423.50 KB)
+_________________________________________________________________
+
+2024-06-27 17:41:24,406 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,406 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:24,406 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 17:41:30,628 - dcgan_base - INFO - Training started
+2024-06-27 17:41:30,628 - dcgan_base - INFO - Training started
+2024-06-27 17:41:30,628 - dcgan_base - INFO - Training started
+2024-06-27 18:07:40,944 - dcgan_base - INFO - >Accuracy real: 91%, fake: 6%
+2024-06-27 18:07:40,944 - dcgan_base - INFO - >Accuracy real: 91%, fake: 6%
+2024-06-27 18:07:40,944 - dcgan_base - INFO - >Accuracy real: 91%, fake: 6%
+2024-06-27 18:33:28,365 - dcgan_base - INFO - >Accuracy real: 43%, fake: 56%
+2024-06-27 18:33:28,365 - dcgan_base - INFO - >Accuracy real: 43%, fake: 56%
+2024-06-27 18:33:28,365 - dcgan_base - INFO - >Accuracy real: 43%, fake: 56%
+2024-06-27 18:59:08,096 - dcgan_base - INFO - >Accuracy real: 49%, fake: 11%
+2024-06-27 18:59:08,096 - dcgan_base - INFO - >Accuracy real: 49%, fake: 11%
+2024-06-27 18:59:08,096 - dcgan_base - INFO - >Accuracy real: 49%, fake: 11%
+2024-06-27 19:24:41,450 - dcgan_base - INFO - >Accuracy real: 5%, fake: 99%
+2024-06-27 19:24:41,450 - dcgan_base - INFO - >Accuracy real: 5%, fake: 99%
+2024-06-27 19:24:41,450 - dcgan_base - INFO - >Accuracy real: 5%, fake: 99%
+2024-06-27 19:50:21,431 - dcgan_base - INFO - >Accuracy real: 78%, fake: 59%
+2024-06-27 19:50:21,431 - dcgan_base - INFO - >Accuracy real: 78%, fake: 59%
+2024-06-27 19:50:21,431 - dcgan_base - INFO - >Accuracy real: 78%, fake: 59%
+2024-06-27 19:50:23,870 - dcgan_base - INFO - Training finished
+2024-06-27 19:50:23,870 - dcgan_base - INFO - Training finished
+2024-06-27 19:50:23,870 - dcgan_base - INFO - Training finished
