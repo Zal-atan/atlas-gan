@@ -1,0 +1,88 @@
+2024-06-27 00:06:59,193 - dcgan_base - INFO - Program started
+2024-06-27 00:06:59,198 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 00:07:00,047 - dcgan_base - INFO - Discriminator created
+2024-06-27 00:07:00,051 - dcgan_base - INFO - Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 14, 14, 64)        640       
+                                                                 
+ leaky_re_lu (LeakyReLU)     (None, 14, 14, 64)        0         
+                                                                 
+ dropout (Dropout)           (None, 14, 14, 64)        0         
+                                                                 
+ conv2d_1 (Conv2D)           (None, 7, 7, 64)          36928     
+                                                                 
+ leaky_re_lu_1 (LeakyReLU)   (None, 7, 7, 64)          0         
+                                                                 
+ dropout_1 (Dropout)         (None, 7, 7, 64)          0         
+                                                                 
+ flatten (Flatten)           (None, 3136)              0         
+                                                                 
+ dense (Dense)               (None, 1)                 3137      
+                                                                 
+=================================================================
+Total params: 40705 (159.00 KB)
+Trainable params: 40705 (159.00 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 00:07:00,054 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 00:07:00,152 - dcgan_base - INFO - Generator created
+2024-06-27 00:07:00,156 - dcgan_base - INFO - Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 6272)              633472    
+                                                                 
+ leaky_re_lu_2 (LeakyReLU)   (None, 6272)              0         
+                                                                 
+ reshape (Reshape)           (None, 7, 7, 128)         0         
+                                                                 
+ conv2d_transpose (Conv2DTr  (None, 14, 14, 128)       262272    
+ anspose)                                                        
+                                                                 
+ leaky_re_lu_3 (LeakyReLU)   (None, 14, 14, 128)       0         
+                                                                 
+ conv2d_transpose_1 (Conv2D  (None, 28, 28, 128)       262272    
+ Transpose)                                                      
+                                                                 
+ leaky_re_lu_4 (LeakyReLU)   (None, 28, 28, 128)       0         
+                                                                 
+ conv2d_2 (Conv2D)           (None, 28, 28, 1)         6273      
+                                                                 
+=================================================================
+Total params: 1164289 (4.44 MB)
+Trainable params: 1164289 (4.44 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 00:07:00,160 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 00:07:00,234 - dcgan_base - INFO - GAN created
+2024-06-27 00:07:00,239 - dcgan_base - INFO - Model: "sequential_2"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ sequential_1 (Sequential)   (None, 28, 28, 1)         1164289   
+                                                                 
+ sequential (Sequential)     (None, 1)                 40705     
+                                                                 
+=================================================================
+Total params: 1204994 (4.60 MB)
+Trainable params: 1164289 (4.44 MB)
+Non-trainable params: 40705 (159.00 KB)
+_________________________________________________________________
+
+2024-06-27 00:07:00,242 - dcgan_base - INFO - ------------------------------------------------------------
+2024-06-27 00:07:02,433 - dcgan_base - INFO - Training started
+2024-06-27 00:14:10,226 - dcgan_base - INFO - >Accuracy real: 65%, fake: 63%
+2024-06-27 00:21:12,537 - dcgan_base - INFO - >Accuracy real: 16%, fake: 97%
+2024-06-27 00:28:21,433 - dcgan_base - INFO - >Accuracy real: 92%, fake: 22%
+2024-06-27 00:35:37,378 - dcgan_base - INFO - >Accuracy real: 44%, fake: 77%
+2024-06-27 00:42:51,741 - dcgan_base - INFO - >Accuracy real: 92%, fake: 46%
+2024-06-27 00:50:13,091 - dcgan_base - INFO - >Accuracy real: 54%, fake: 69%
+2024-06-27 00:57:31,455 - dcgan_base - INFO - >Accuracy real: 34%, fake: 84%
+2024-06-27 01:04:54,605 - dcgan_base - INFO - >Accuracy real: 9%, fake: 97%
+2024-06-27 01:12:21,509 - dcgan_base - INFO - >Accuracy real: 27%, fake: 88%
+2024-06-27 01:19:42,499 - dcgan_base - INFO - >Accuracy real: 40%, fake: 74%
+2024-06-27 01:19:45,979 - dcgan_base - INFO - Training finished
