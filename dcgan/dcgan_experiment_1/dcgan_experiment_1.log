@@ -1,0 +1,94 @@
+2024-06-27 01:32:30,094 - dcgan_experiment_1 - INFO - Program started
+2024-06-27 01:32:30,099 - dcgan_experiment_1 - INFO - ------------------------------------------------------------
+2024-06-27 01:32:31,070 - dcgan_experiment_1 - INFO - Discriminator created
+2024-06-27 01:32:31,074 - dcgan_experiment_1 - INFO - Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 14, 14, 64)        640       
+                                                                 
+ leaky_re_lu (LeakyReLU)     (None, 14, 14, 64)        0         
+                                                                 
+ dropout (Dropout)           (None, 14, 14, 64)        0         
+                                                                 
+ conv2d_1 (Conv2D)           (None, 7, 7, 64)          36928     
+                                                                 
+ leaky_re_lu_1 (LeakyReLU)   (None, 7, 7, 64)          0         
+                                                                 
+ dropout_1 (Dropout)         (None, 7, 7, 64)          0         
+                                                                 
+ flatten (Flatten)           (None, 3136)              0         
+                                                                 
+ dense (Dense)               (None, 1)                 3137      
+                                                                 
+=================================================================
+Total params: 40705 (159.00 KB)
+Trainable params: 40705 (159.00 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 01:32:31,076 - dcgan_experiment_1 - INFO - ------------------------------------------------------------
+2024-06-27 01:32:31,201 - dcgan_experiment_1 - INFO - Generator created
+2024-06-27 01:32:31,205 - dcgan_experiment_1 - INFO - Model: "sequential_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ dense_1 (Dense)             (None, 12544)             1266944   
+                                                                 
+ leaky_re_lu_2 (LeakyReLU)   (None, 12544)             0         
+                                                                 
+ reshape (Reshape)           (None, 7, 7, 256)         0         
+                                                                 
+ conv2d_transpose (Conv2DTr  (None, 14, 14, 128)       524416    
+ anspose)                                                        
+                                                                 
+ leaky_re_lu_3 (LeakyReLU)   (None, 14, 14, 128)       0         
+                                                                 
+ conv2d_transpose_1 (Conv2D  (None, 28, 28, 128)       262272    
+ Transpose)                                                      
+                                                                 
+ leaky_re_lu_4 (LeakyReLU)   (None, 28, 28, 128)       0         
+                                                                 
+ conv2d_transpose_2 (Conv2D  (None, 28, 28, 64)        131136    
+ Transpose)                                                      
+                                                                 
+ leaky_re_lu_5 (LeakyReLU)   (None, 28, 28, 64)        0         
+                                                                 
+ conv2d_transpose_3 (Conv2D  (None, 28, 28, 1)         3137      
+ Transpose)                                                      
+                                                                 
+=================================================================
+Total params: 2187905 (8.35 MB)
+Trainable params: 2187905 (8.35 MB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+
+2024-06-27 01:32:31,208 - dcgan_experiment_1 - INFO - ------------------------------------------------------------
+2024-06-27 01:32:31,309 - dcgan_experiment_1 - INFO - GAN created
+2024-06-27 01:32:31,313 - dcgan_experiment_1 - INFO - Model: "sequential_2"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ sequential_1 (Sequential)   (None, 28, 28, 1)         2187905   
+                                                                 
+ sequential (Sequential)     (None, 1)                 40705     
+                                                                 
+=================================================================
+Total params: 2228610 (8.50 MB)
+Trainable params: 2187905 (8.35 MB)
+Non-trainable params: 40705 (159.00 KB)
+_________________________________________________________________
+
+2024-06-27 01:32:31,315 - dcgan_experiment_1 - INFO - ------------------------------------------------------------
+2024-06-27 01:32:33,040 - dcgan_experiment_1 - INFO - Training started
+2024-06-27 01:36:31,318 - dcgan_experiment_1 - INFO - >Accuracy real: 50%, fake: 79%
+2024-06-27 01:40:21,177 - dcgan_experiment_1 - INFO - >Accuracy real: 44%, fake: 51%
+2024-06-27 01:44:13,115 - dcgan_experiment_1 - INFO - >Accuracy real: 46%, fake: 51%
+2024-06-27 01:48:09,138 - dcgan_experiment_1 - INFO - >Accuracy real: 40%, fake: 75%
+2024-06-27 01:52:02,798 - dcgan_experiment_1 - INFO - >Accuracy real: 45%, fake: 71%
+2024-06-27 01:55:59,824 - dcgan_experiment_1 - INFO - >Accuracy real: 38%, fake: 72%
+2024-06-27 01:59:54,249 - dcgan_experiment_1 - INFO - >Accuracy real: 39%, fake: 71%
+2024-06-27 02:03:50,652 - dcgan_experiment_1 - INFO - >Accuracy real: 1%, fake: 100%
+2024-06-27 02:07:47,109 - dcgan_experiment_1 - INFO - >Accuracy real: 14%, fake: 96%
+2024-06-27 02:11:46,105 - dcgan_experiment_1 - INFO - >Accuracy real: 8%, fake: 93%
+2024-06-27 02:11:48,054 - dcgan_experiment_1 - INFO - Training finished
